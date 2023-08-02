@@ -1,16 +1,24 @@
 #include<stdio.h>
-long int multiplyNumbers(int n);
-int main() {
-    int n;
-    printf("Enter a positive integer: ");
-    scanf("%d",&n);
-    printf("Factorial of %d = %ld", n, multiplyNumbers(n));
-    return 0;
+int main()
+{
+int first=0, second=1, i, n, sum=0;
+printf("Enter the number of terms: ");
+scanf("%d",&n);
+printf("Fibonacci Series:");
+for(i=0 ; i<n ; i++)
+{
+if(i <= 1)
+{
+sum=i;
 }
+else
+{
+sum=first + second;
+first=second;
 
-long int multiplyNumbers(int n) {
-    if (n>=1)
-        return n*multiplyNumbers(n-1);
-    else
-        return 1;
+second=sum;
+}
+printf(" %d",sum)
+}
+return 0;
 }
