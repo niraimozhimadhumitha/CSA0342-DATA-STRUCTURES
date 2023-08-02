@@ -1,27 +1,23 @@
 #include<stdio.h>
-#include<conio.h>
-#define MAX_SIZE 5
-void linear_search(int[], int);
-int main() {
-  int arr_search[MAX_SIZE], i, element;
-  printf("Simple Linear Search Example - Array and Functions\n");
-  printf("\nEnter %d Elements for Searching : \n", MAX_SIZE);
-  for (i = 0; i < MAX_SIZE; i++)
-    scanf("%d", &arr_search[i]);
-
-  printf("Enter Element to Search : ");
-  scanf("%d", &element);
-  linear_search(arr_search, element);
-  getch();
-}
-void linear_search(int fn_arr[], int element) {
-  int i;
-  for (i = 0; i < MAX_SIZE; i++) {
-    if (fn_arr[i] == element) {
-      printf("Linear Search : %d is Found at array : %d.\n", element, i + 1);
-      break;
+int main()
+{
+    int array[100], search, c, number;
+    printf("Enter the number of elements in array\n");
+    scanf("%d",&number);
+    printf("Enter %d numbers\n", number);
+    for ( c = 0 ; c < number ; c++ )
+        scanf("%d",&array[c]);
+    printf("Enter the number to search\n");
+    scanf("%d",&search);
+    for ( c = 0 ; c < number ; c++ )
+    {
+        if ( array[c] == search )  
+        {
+            printf("%d is present at location %d.\n", search, c+1);
+            break;
+        }
     }
-  }
-  if (i == MAX_SIZE)
-    printf("\nSearch Element : %d  : Not Found \n", element);
+    if ( c == number )
+        printf("%d is not present in array.\n", search);
+    return 0;
 }
